@@ -1,28 +1,133 @@
 use crate::config::solver::SolverSettings;
+use rust_decimal::Decimal;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
+
+/// How a venue feed should be polled or subscribed to.
+#[derive(Debug, Clone, Deserialize, Serialize)]
+#[serde(rename_all = "snake_case")]
+pub enum FeedType {
+    Rest { url: String },
+    WebSocket { url: String },
+}
+
+/// Backoff parameters used by reconnecting market-data workers.
+#[derive(Debug, Clone, Deserialize, Serialize)]
+pub struct BackoffConfig {
+    pub initial_ms: u64,
+    pub max_ms: u64,
+    pub multiplier: Decimal,
+}
+
+/// Maps one venue-native symbol to a canonical pricing asset.
+#[derive(Debug, Clone, Deserialize, Serialize)]
+pub struct SymbolMapping {
+    pub venue_symbol: String,
+    pub canonical_asset: String,
+}
+
+/// Per-venue market-data config copied from the munger pricing model.
+#[derive(Debug, Clone, Deserialize, Serialize)]
+pub struct VenueFeedConfig {
+    pub venue_id: String,
+    #[serde(default)]
+    pub feed_types: Vec<FeedType>,
+    #[serde(default)]
+    pub symbols: Vec<SymbolMapping>,
+    pub book_depth: u8,
+    pub reconnect_backoff: BackoffConfig,
+    #[serde(default)]
+    pub weight_override: Option<Decimal>,
+}
+
+/// Per-aggregator market-data config copied from the munger pricing model.
+#[derive(Debug, Clone, Deserialize, Serialize)]
+pub struct AggregatorFeedConfig {
+    pub agg_id: String,
+    pub api_url: String,
+    #[serde(default)]
+    pub api_keys: Vec<String>,
+    #[serde(default)]
+    pub fiat_ids_map: HashMap<String, String>,
+    pub base_cooldown_secs: u64,
+}
+
+/// Munger-style market-data settings for VWMP computation.
+#[derive(Debug, Clone, Deserialize, Serialize)]
+pub struct MarketDataSettings {
+    pub venue_staleness_threshold_secs: u64,
+    pub aggregator_staleness_threshold_secs: u64,
+    pub min_active_venues: u8,
+    pub outlier_threshold_pct: Decimal,
+    pub vwmp_tick_interval_secs: u64,
+    pub vol_window_secs: u64,
+    pub vol_sample_interval_secs: u64,
+    #[serde(default = "default_aggregator_weight")]
+    pub aggregator_weight: Decimal,
+    #[serde(default)]
+    pub venues: HashMap<String, VenueFeedConfig>,
+    #[serde(default)]
+    pub aggregators: HashMap<String, AggregatorFeedConfig>,
+}
+
+impl Default for MarketDataSettings {
+    fn default() -> Self {
+        Self {
+            venue_staleness_threshold_secs: 10,
+            aggregator_staleness_threshold_secs: 30,
+            min_active_venues: 1,
+            outlier_threshold_pct: Decimal::new(5, 0),
+            vwmp_tick_interval_secs: 1,
+            vol_window_secs: 300,
+            vol_sample_interval_secs: 5,
+            aggregator_weight: default_aggregator_weight(),
+            venues: HashMap::new(),
+            aggregators: HashMap::new(),
+        }
+    }
+}
+
+fn default_aggregator_weight() -> Decimal {
+    Decimal::new(5, 1)
+}
 
 /// Controls how market prices are fetched and overridden.
 #[derive(Debug, Clone, Deserialize, Serialize)]
 pub struct PricingSettings {
+    #[serde(default = "default_refresh_interval_secs")]
     pub refresh_interval_secs: u64,
+    #[serde(default = "default_coingecko_api_url")]
     pub coingecko_api_url: String,
     #[serde(default)]
     pub coingecko_api_key: Option<String>,
     #[serde(default)]
-    pub static_prices: std::collections::HashMap<String, f64>,
+    pub static_prices: HashMap<String, f64>,
+    #[serde(default)]
+    pub asset_canonicals: HashMap<String, String>,
+    #[serde(default)]
+    pub market_data: MarketDataSettings,
 }
 
 impl Default for PricingSettings {
     /// Provides practical defaults for local development.
     fn default() -> Self {
         Self {
-            refresh_interval_secs: 30,
-            coingecko_api_url: "https://api.coingecko.com/api/v3/simple/price".to_string(),
+            refresh_interval_secs: default_refresh_interval_secs(),
+            coingecko_api_url: default_coingecko_api_url(),
             coingecko_api_key: None,
             static_prices: Default::default(),
+            asset_canonicals: Default::default(),
+            market_data: MarketDataSettings::default(),
         }
     }
+}
+
+fn default_refresh_interval_secs() -> u64 {
+    30
+}
+
+fn default_coingecko_api_url() -> String {
+    "https://api.coingecko.com/api/v3/simple/price".to_string()
 }
 
 /// Configures quote generation and order signing behavior.

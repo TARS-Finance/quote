@@ -12,6 +12,16 @@ use crate::{
 };
 use std::sync::Arc;
 
+fn classify_empty_routes_error(liquidity_blocked: bool) -> Result<(), AppError> {
+    if liquidity_blocked {
+        Err(AppError::conflict(
+            "insufficient destination liquidity for requested route",
+        ))
+    } else {
+        Ok(())
+    }
+}
+
 /// Orchestrates quote generation from metadata, pricing, strategies, and liquidity.
 #[derive(Clone)]
 pub struct QuoteService {
@@ -83,6 +93,7 @@ impl QuoteService {
             .min(self.settings.max_user_slippage_bps);
 
         let mut routes = Vec::new();
+        let mut liquidity_blocked = false;
         for strategy in strategies.values() {
             // An explicit strategy ID narrows route selection to a single configured path.
             if let Some(strategy_id) = request.strategy_id.as_ref() {
@@ -123,10 +134,15 @@ impl QuoteService {
                 .can_fulfill(strategy, &destination.amount)
                 .await
             {
+                liquidity_blocked = true;
                 continue;
             }
 
             routes.push(self.build_route(strategy, source, destination, slippage));
+        }
+
+        if routes.is_empty() {
+            classify_empty_routes_error(liquidity_blocked)?;
         }
 
         // Exact-in prefers the highest destination amount, while exact-out prefers the cheapest source.
@@ -190,5 +206,24 @@ impl QuoteService {
             .get_asset_by_chain_and_htlc(chain, rest)
             .or_else(|| self.metadata.get_asset_by_id(value))
             .ok_or_else(|| AppError::bad_request(format!("unknown asset: {value}")))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::classify_empty_routes_error;
+    use crate::error::AppError;
+
+    #[test]
+    fn classifies_liquidity_exhaustion_as_conflict() {
+        let error = classify_empty_routes_error(true)
+            .expect_err("expected liquidity exhaustion to produce an error");
+
+        match error {
+            AppError::Conflict(message) => {
+                assert_eq!(message, "insufficient destination liquidity for requested route")
+            }
+            other => panic!("expected conflict error, got {other:?}"),
+        }
     }
 }

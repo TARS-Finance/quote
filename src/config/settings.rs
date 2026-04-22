@@ -1,4 +1,3 @@
-use crate::config::solver::SolverSettings;
 use rust_decimal::Decimal;
 use serde::{Deserialize, Serialize};
 use std::collections::HashMap;
@@ -171,9 +170,8 @@ pub struct Settings {
     pub addr: String,
     pub db_url: String,
     pub chain_json_path: String,
-    pub strategy_path: String,
-    pub chain_ids: HashMap<String, u128>,
-    pub solver: SolverSettings,
+    pub policy_path: String,
+    pub chain_ids: HashMap<String, String>,
     #[serde(default)]
     pub pricing: PricingSettings,
     #[serde(default)]

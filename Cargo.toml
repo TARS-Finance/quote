@@ -38,6 +38,7 @@ tracing = "0.1.41"
 tracing-subscriber = "0.3.20"
 url = "2.5.7"
 
+policy = { path = "../tars-rs/crates/policy" }
 tars = { path = "../tars-rs", features = ["bitcoin", "orderbook", "primitives", "utils"] }
 
 [dev-dependencies]

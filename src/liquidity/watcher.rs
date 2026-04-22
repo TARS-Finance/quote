@@ -147,7 +147,7 @@ impl LiquidityWatcher {
             };
 
             // The fetcher returns the raw on-chain balance before accounting for open orders.
-            let balance = match fetcher.fetch(config.solver_account(), token).await {
+            let balance = match fetcher.fetch(config.liquidity_account(), token).await {
                 Ok(balance) => balance,
                 Err(error) => {
                     tracing::warn!(chain, asset_id, ?error, "failed to fetch solver balance");
@@ -159,7 +159,7 @@ impl LiquidityWatcher {
             let committed = self
                 .orderbook
                 .get_solver_committed_funds(
-                    config.solver_account(),
+                    config.order_identity(),
                     chain,
                     &asset.asset.htlc.address,
                 )

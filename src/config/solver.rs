@@ -15,9 +15,19 @@ pub struct ChainConfig {
 }
 
 impl ChainConfig {
-    /// Returns the account that should be queried for spendable liquidity.
-    pub fn solver_account(&self) -> &str {
+    /// Returns the address that should be queried for on-chain balances.
+    pub fn liquidity_account(&self) -> &str {
+        &self.address
+    }
+
+    /// Returns the identity used by order creation and committed-funds lookups.
+    pub fn order_identity(&self) -> &str {
         self.solver_account.as_deref().unwrap_or(&self.address)
+    }
+
+    /// Backwards-compatible alias for older call sites.
+    pub fn solver_account(&self) -> &str {
+        self.order_identity()
     }
 }
 

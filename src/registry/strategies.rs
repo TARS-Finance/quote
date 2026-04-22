@@ -72,7 +72,14 @@ impl StrategyRegistry {
     pub fn load(path: &str, metadata: &MetadataIndex) -> eyre::Result<Self> {
         let contents = fs::read_to_string(path)?;
         let configs: Vec<StrategyConfig> = serde_json::from_str(&contents)?;
+        Self::from_configs(configs, metadata)
+    }
 
+    /// Builds the registry from already-loaded strategy config records.
+    pub fn from_configs(
+        configs: Vec<StrategyConfig>,
+        metadata: &MetadataIndex,
+    ) -> eyre::Result<Self> {
         let mut strategies_by_pair = HashMap::<String, HashMap<String, Strategy>>::new();
         let mut strategies_by_id = HashMap::new();
 

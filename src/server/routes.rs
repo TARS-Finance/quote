@@ -9,6 +9,7 @@ use std::sync::Arc;
 pub fn router(_state: Arc<AppState>) -> Router<Arc<AppState>> {
     Router::new()
         .route("/health", get(handlers::health))
+        .route("/fiat", get(handlers::fiat))
         .route("/quote", get(handlers::quote))
         .route(
             "/orders",

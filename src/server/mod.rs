@@ -4,6 +4,8 @@ pub mod handlers;
 pub mod response;
 /// Axum route registration.
 pub mod routes;
+/// Request and response types for server endpoints.
+pub mod types;
 
 use crate::AppState;
 use eyre::Result;

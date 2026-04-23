@@ -5,3 +5,6 @@
 chain.json
 Settings.toml
 /local
+
+/cli/node_modules
+/cli/config.json

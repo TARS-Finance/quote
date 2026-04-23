@@ -18,5 +18,6 @@ pub fn router(_state: Arc<AppState>) -> Router<Arc<AppState>> {
         .route("/orders/:id", get(handlers::get_order))
         .route("/liquidity", get(handlers::liquidity))
         .route("/strategies", get(handlers::strategies))
+        .route("/chains", get(handlers::chains))
         .route("/pairs", get(handlers::pairs))
 }

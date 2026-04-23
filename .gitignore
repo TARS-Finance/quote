@@ -8,3 +8,4 @@ Settings.toml
 
 /cli/node_modules
 /cli/config.json
+.codegraph/

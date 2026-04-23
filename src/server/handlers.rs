@@ -130,6 +130,13 @@ pub async fn strategies(
     Ok(success(state.registry.all_strategies().clone()))
 }
 
+/// Returns the raw chain and asset registry loaded from `chain.json`.
+pub async fn chains(
+    State(state): State<Arc<AppState>>,
+) -> Json<crate::server::response::ApiResponse<Vec<crate::metadata::chains::RawChain>>> {
+    success(state.metadata.raw_chains.clone())
+}
+
 /// Returns the supported order pairs derived from loaded strategies.
 pub async fn pairs(
     State(state): State<Arc<AppState>>,

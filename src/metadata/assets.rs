@@ -16,6 +16,7 @@ pub struct AssetMetadata {
 #[derive(Debug, Clone)]
 pub struct MetadataIndex {
     pub chains: Vec<Chain>,
+    pub raw_chains: Vec<RawChain>,
     pub assets: Vec<AssetMetadata>,
     pub assets_by_id: HashMap<String, AssetMetadata>,
     pub assets_by_htlc: HashMap<(String, String), AssetMetadata>,
@@ -26,6 +27,7 @@ impl MetadataIndex {
     pub fn load(path: &str) -> eyre::Result<Self> {
         let contents = fs::read_to_string(path)?;
         let raw_chains: Vec<RawChain> = serde_json::from_str(&contents)?;
+        let stored_raw = raw_chains.clone();
 
         let mut chains = Vec::with_capacity(raw_chains.len());
         let mut assets = Vec::new();
@@ -63,6 +65,7 @@ impl MetadataIndex {
 
         Ok(Self {
             chains,
+            raw_chains: stored_raw,
             assets,
             assets_by_id,
             assets_by_htlc,

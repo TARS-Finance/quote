@@ -14,6 +14,7 @@ pub struct StrategyAsset {
     pub htlc_address: String,
     pub token_address: String,
     pub token_id: String,
+    pub display_symbol: Option<String>,
     pub decimals: u8,
     pub version: HTLCVersion,
 }
@@ -155,11 +156,15 @@ impl StrategyRegistry {
         chain: &str,
         metadata: &MetadataIndex,
     ) -> eyre::Result<StrategyAsset> {
-        if metadata
-            .get_asset_by_chain_and_htlc(chain, &config.asset)
-            .is_none()
-            && config.asset != "primary"
-        {
+        let display_symbol = if config.display_symbol.is_none() {
+            metadata
+                .get_asset_by_chain_and_htlc(chain, &config.asset)
+                .and_then(|m| m.aggregate_symbol.clone())
+        } else {
+            config.display_symbol
+        };
+
+        if display_symbol.is_none() && config.asset != "primary" {
             tracing::warn!(
                 strategy_chain = chain,
                 strategy_asset = %config.asset,
@@ -172,6 +177,7 @@ impl StrategyRegistry {
             htlc_address: config.htlc_address,
             token_address: config.token_address,
             token_id: config.token_id,
+            display_symbol,
             decimals: config.decimals,
             version: config.version,
         })

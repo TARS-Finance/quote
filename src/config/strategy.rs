@@ -14,6 +14,8 @@ pub struct StrategyAssetConfig {
     pub htlc_address: String,
     pub token_address: String,
     pub token_id: String,
+    #[serde(default)]
+    pub display_symbol: Option<String>,
     pub decimals: u8,
     pub version: HTLCVersion,
 }

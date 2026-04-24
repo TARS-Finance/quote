@@ -94,6 +94,7 @@ fn strategy_asset(asset: &AssetMetadata) -> StrategyAssetConfig {
         htlc_address: asset.asset.htlc.address.clone(),
         token_address: asset.asset.token.address.clone(),
         token_id: asset.asset.token_id.clone(),
+        display_symbol: asset.aggregate_symbol.clone(),
         decimals: asset.asset.decimals,
         version: asset.asset.version.clone(),
     }

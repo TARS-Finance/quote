@@ -109,6 +109,64 @@
           "cmc": "3408"
         },
         "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "base_sepolia:ibtc",
+        "name": "iBTC:iBTC",
+        "chain": "base_sepolia",
+        "icon": "https://garden.imgix.net/token-images/dlcBTCIcon.svg",
+        "htlc": {
+          "address": "0x46F1Ba9C9d89C34F9dbC4085F6B1f9965c589ca1",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x0b0D554D9573bAe1a7556d220847f45182918B28",
+          "schema": "evm:erc20"
+        },
+        "decimals": 8,
+        "min_amount": "10",
+        "max_amount": "1000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/BaseIcon.svg",
+        "chain_id": "84532",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://sepolia.basescan.org",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "base_sepolia:wbtc",
+        "name": "Wrapped Bitcoin:WBTC",
+        "chain": "base_sepolia",
+        "icon": "https://garden.imgix.net/token-images/wbtc.svg",
+        "htlc": {
+          "address": "0xd1E0Ba2b165726b3a6051b765d4564d030FDcf50",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0xD8a6E3FCA403d79b6AD6216b60527F51cc967D39",
+          "schema": "evm:erc20"
+        },
+        "decimals": 8,
+        "min_amount": "10",
+        "max_amount": "1000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/BaseIcon.svg",
+        "chain_id": "84532",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://sepolia.basescan.org",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
       }
     ]
   },
@@ -180,6 +238,64 @@
           "cmc": "3408"
         },
         "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "arbitrum_sepolia:ibtc",
+        "name": "iBTC:iBTC",
+        "chain": "arbitrum_sepolia",
+        "icon": "https://garden.imgix.net/token-images/dlcBTCIcon.svg",
+        "htlc": {
+          "address": "0x7e8c18fa79bd4014cfCf49294Bf315139eD39f45",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x685437f025c5f33A94818408C286bc1F023201Fc",
+          "schema": "evm:erc20"
+        },
+        "decimals": 8,
+        "min_amount": "10",
+        "max_amount": "1000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/arbitrumSepolia.svg",
+        "chain_id": "421614",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://sepolia.arbiscan.io",
+        "min_timelock": 36000,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "arbitrum_sepolia:wbtc",
+        "name": "Wrapped Bitcoin:WBTC",
+        "chain": "arbitrum_sepolia",
+        "icon": "https://garden.imgix.net/token-images/wbtc.svg",
+        "htlc": {
+          "address": "0xb5AE9785349186069C48794a763DB39EC756B1cF",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x1c287717c886794ac9f5DF3987195431Ceb3456E",
+          "schema": "evm:erc20"
+        },
+        "decimals": 8,
+        "min_amount": "10",
+        "max_amount": "1000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/arbitrumSepolia.svg",
+        "chain_id": "421614",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://sepolia.arbiscan.io",
+        "min_timelock": 36000,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
       }
     ]
   },
@@ -220,6 +336,35 @@
           "coingecko": "usd-coin",
           "aggregate": "USDC",
           "cmc": "3408"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "ethereum_sepolia:wbtc",
+        "name": "Wrapped Bitcoin:WBTC",
+        "chain": "ethereum_sepolia",
+        "icon": "https://garden.imgix.net/token-images/wbtc.svg",
+        "htlc": {
+          "address": "0xd1E0Ba2b165726b3a6051b765d4564d030FDcf50",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0xE918A5a47b8e0AFAC2382bC5D1e981613e63fB07",
+          "schema": "evm:erc20"
+        },
+        "decimals": 8,
+        "min_amount": "10",
+        "max_amount": "1000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/sepolia.svg",
+        "chain_id": "11155111",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://sepolia.etherscan.io",
+        "min_timelock": 600,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
         },
         "solver": "__SOLVER_EVM_ADDRESS__"
       }
@@ -264,6 +409,35 @@
           "cmc": "3408"
         },
         "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "monad_testnet:cbbtc",
+        "name": "Coinbase Wrapped Bitcoin:cbBTC",
+        "chain": "monad_testnet",
+        "icon": "https://garden.imgix.net/token-images/cbBTC.svg",
+        "htlc": {
+          "address": "0x5c9f75F5bbEFB2734034F8C833E79cFB7E9ED518",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x8cB57367532A5A967425Ace0E5eD4554BFE3d341",
+          "schema": "evm:erc20"
+        },
+        "decimals": 8,
+        "min_amount": "10",
+        "max_amount": "1000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/monad.svg",
+        "chain_id": "10143",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://testnet.monadexplorer.com",
+        "min_timelock": 14400,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
       }
     ]
   },
@@ -278,6 +452,35 @@
     "supported_htlc_schemas": ["evm:htlc_erc20", "evm:htlc"],
     "supported_token_schemas": ["evm:erc20"],
     "assets": [
+      {
+        "id": "alpen_testnet:sbtc",
+        "name": "Signet BTC:sBTC",
+        "chain": "alpen_testnet",
+        "icon": "https://garden.imgix.net/token-images/bitcoin.svg",
+        "htlc": {
+          "address": "0x934C87EE12c6c541E9C3A4997ae70371b3db7b3e",
+          "schema": "evm:htlc"
+        },
+        "token": {
+          "address": "primary",
+          "schema": "primary"
+        },
+        "decimals": 18,
+        "min_amount": "100000000000",
+        "max_amount": "50000000000000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/AlpenIcon.svg",
+        "chain_id": "8150",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://explorer.pectra-testnet.alpenlabs.io",
+        "min_timelock": 1440,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      },
       {
         "id": "alpen_testnet:usdc",
         "name": "USD Coin:USDC",
@@ -320,6 +523,122 @@
     "supported_htlc_schemas": ["evm:htlc", "evm:htlc_erc20"],
     "supported_token_schemas": ["evm:erc20"],
     "assets": [
+      {
+        "id": "citrea_testnet:wcbtc",
+        "name": "Wrapped Citrea Bitcoin:WCBTC",
+        "chain": "citrea_testnet",
+        "icon": "https://garden.imgix.net/token-images/wbtc.svg",
+        "htlc": {
+          "address": "0xD8e99df8cf77E7383c2f2a84bC6384b2DF88CAd3",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x8d0c9d1c17aE5e40ffF9bE350f57840E9E66Cd93",
+          "schema": "evm:erc20"
+        },
+        "decimals": 18,
+        "min_amount": "100000000000",
+        "max_amount": "500000000000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/citrea-black.svg",
+        "chain_id": "5115",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://explorer.testnet.citrea.xyz",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "citrea_testnet:wbtc",
+        "name": "Wrapped Bitcoin:WBTC",
+        "chain": "citrea_testnet",
+        "icon": "https://garden.imgix.net/token-images/wbtc.svg",
+        "htlc": {
+          "address": "0xd1E0Ba2b165726b3a6051b765d4564d030FDcf50",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x3edA22460259b29433704dda71cc921F528165Ea",
+          "schema": "evm:erc20"
+        },
+        "decimals": 8,
+        "min_amount": "10",
+        "max_amount": "1000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/citrea-black.svg",
+        "chain_id": "5115",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://explorer.testnet.citrea.xyz",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "citrea_testnet:cbtc",
+        "name": "Citrea Bitcoin:CBTC",
+        "chain": "citrea_testnet",
+        "icon": "https://garden.imgix.net/token-images/bitcoin.svg",
+        "htlc": {
+          "address": "0xE413743B51f3cC8b3ac24addf50D18fa138cB0Bb",
+          "schema": "evm:htlc"
+        },
+        "token": {
+          "address": "primary",
+          "schema": "primary"
+        },
+        "decimals": 18,
+        "min_amount": "100000000000",
+        "max_amount": "10000000000000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/citrea-black.svg",
+        "chain_id": "5115",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://explorer.testnet.citrea.xyz",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "citrea_testnet:cbbtc",
+        "name": "Coinbase Wrapped Bitcoin:cbBTC",
+        "chain": "citrea_testnet",
+        "icon": "https://garden.imgix.net/token-images/bitcoin.svg",
+        "htlc": {
+          "address": "0x8656d38352CD90ca55881eBd0AF6822839b435A8",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0xeAa998aF280a62Ae08BaE4f9fa59C9b30e6BD306",
+          "schema": "evm:erc20"
+        },
+        "decimals": 8,
+        "min_amount": "10",
+        "max_amount": "1000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/citrea-black.svg",
+        "chain_id": "5115",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://explorer.testnet.citrea.xyz",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      },
       {
         "id": "citrea_testnet:usdc",
         "name": "USD Coin:USDC",

@@ -3,11 +3,67 @@
   "poll_interval_ms": 5000,
   "poll_timeout_ms": 900000,
   "chains": {
+    "arbitrum_sepolia": {
+      "type": "evm",
+      "chain_id": 421614,
+      "chain_name": "Arbitrum Sepolia",
+      "rpc_url": "https://sepolia-rollup.arbitrum.io/rpc",
+      "private_key": "YOUR_HEX_PRIVATE_KEY"
+    },
     "base_sepolia": {
       "type": "evm",
       "chain_id": 84532,
       "chain_name": "Base Sepolia",
       "rpc_url": "https://sepolia.base.org",
+      "private_key": "YOUR_HEX_PRIVATE_KEY"
+    },
+    "ethereum_sepolia": {
+      "type": "evm",
+      "chain_id": 11155111,
+      "chain_name": "Ethereum Sepolia",
+      "rpc_url": "https://ethereum-sepolia-rpc.publicnode.com",
+      "private_key": "YOUR_HEX_PRIVATE_KEY"
+    },
+    "monad_testnet": {
+      "type": "evm",
+      "chain_id": 10143,
+      "chain_name": "Monad Testnet",
+      "rpc_url": "https://testnet-rpc.monad.xyz",
+      "private_key": "YOUR_HEX_PRIVATE_KEY"
+    },
+    "alpen_testnet": {
+      "type": "evm",
+      "chain_id": 8150,
+      "chain_name": "Alpen Testnet",
+      "rpc_url": "https://rpc.pectra-testnet.alpenlabs.io",
+      "private_key": "YOUR_HEX_PRIVATE_KEY"
+    },
+    "citrea_testnet": {
+      "type": "evm",
+      "chain_id": 5115,
+      "chain_name": "Citrea Testnet",
+      "rpc_url": "https://rpc.testnet.citrea.xyz",
+      "private_key": "YOUR_HEX_PRIVATE_KEY"
+    },
+    "bnbchain_testnet": {
+      "type": "evm",
+      "chain_id": 97,
+      "chain_name": "BNB Chain Testnet",
+      "rpc_url": "https://data-seed-prebsc-1-s1.binance.org:8545",
+      "private_key": "YOUR_HEX_PRIVATE_KEY"
+    },
+    "hyperevm_testnet": {
+      "type": "evm",
+      "chain_id": 998,
+      "chain_name": "HyperEVM Testnet",
+      "rpc_url": "https://rpc.hyperliquid-testnet.xyz/evm",
+      "private_key": "YOUR_HEX_PRIVATE_KEY"
+    },
+    "utars_chain_1": {
+      "type": "evm",
+      "chain_id": 515118202807383,
+      "chain_name": "uTARS Chain 1",
+      "rpc_url": "http://localhost:8545",
       "private_key": "YOUR_HEX_PRIVATE_KEY"
     },
     "bitcoin_testnet": {

@@ -6,42 +6,42 @@ rpc_url = "https://sepolia.base.org"
 native_decimals = 18
 native_asset_id = "base_sepolia:eth"
 address = "__SOLVER_EVM_ADDRESS__"
-supported_assets = ["base_sepolia:usdt", "base_sepolia:usdc"]
+supported_assets = ["base_sepolia:usdt", "base_sepolia:usdc", "base_sepolia:ibtc", "base_sepolia:wbtc"]
 
 [chains.arbitrum_sepolia]
 rpc_url = "https://sepolia-rollup.arbitrum.io/rpc"
 native_decimals = 18
 native_asset_id = "arbitrum_sepolia:eth"
 address = "__SOLVER_EVM_ADDRESS__"
-supported_assets = ["arbitrum_sepolia:usdc2", "arbitrum_sepolia:usdc"]
+supported_assets = ["arbitrum_sepolia:usdc2", "arbitrum_sepolia:usdc", "arbitrum_sepolia:ibtc", "arbitrum_sepolia:wbtc"]
 
 [chains.ethereum_sepolia]
 rpc_url = "https://ethereum-sepolia-rpc.publicnode.com"
 native_decimals = 18
 native_asset_id = "ethereum_sepolia:eth"
 address = "__SOLVER_EVM_ADDRESS__"
-supported_assets = ["ethereum_sepolia:usdc"]
+supported_assets = ["ethereum_sepolia:usdc", "ethereum_sepolia:wbtc"]
 
 [chains.monad_testnet]
 rpc_url = "https://testnet-rpc.monad.xyz"
 native_decimals = 18
 native_asset_id = "monad_testnet:mon"
 address = "__SOLVER_EVM_ADDRESS__"
-supported_assets = ["monad_testnet:usdc"]
+supported_assets = ["monad_testnet:usdc", "monad_testnet:cbbtc"]
 
 [chains.alpen_testnet]
 rpc_url = "https://rpc.pectra-testnet.alpenlabs.io"
 native_decimals = 18
 native_asset_id = "alpen_testnet:sbtc"
 address = "__SOLVER_EVM_ADDRESS__"
-supported_assets = ["alpen_testnet:usdc"]
+supported_assets = ["alpen_testnet:sbtc", "alpen_testnet:usdc"]
 
 [chains.citrea_testnet]
 rpc_url = "https://rpc.testnet.citrea.xyz"
 native_decimals = 18
 native_asset_id = "citrea_testnet:cbtc"
 address = "__SOLVER_EVM_ADDRESS__"
-supported_assets = ["citrea_testnet:usdc", "citrea_testnet:usdt"]
+supported_assets = ["citrea_testnet:wcbtc", "citrea_testnet:wbtc", "citrea_testnet:cbtc", "citrea_testnet:cbbtc", "citrea_testnet:usdc", "citrea_testnet:usdt"]
 
 [chains.bnbchain_testnet]
 name = "BNB Chain Testnet"

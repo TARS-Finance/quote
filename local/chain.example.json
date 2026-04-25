@@ -1,0 +1,553 @@
+[
+  {
+    "chain": "utars_chain_1",
+    "id": "evm:515118202807383",
+    "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRms0sICMEHottyA0TOfEUZqL6JVOsm2GhiXw&s",
+    "explorer_url": "http://localhost:8545",
+    "confirmation_target": 1,
+    "source_timelock": "43200",
+    "destination_timelock": "3600",
+    "supported_htlc_schemas": ["evm:htlc_native", "evm:htlc_erc20"],
+    "supported_token_schemas": ["primary", "evm:erc20"],
+    "assets": [
+      {
+        "id": "utars_chain_1:usdc",
+        "name": "USD Coin:USDC",
+        "chain": "utars_chain_1",
+        "icon": "https://garden.imgix.net/token-images/usdc.svg",
+        "htlc": {
+          "address": "__ROLLUP_HTLC_ADDRESS__",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "__ROLLUP_USDC_ERC20__",
+          "schema": "evm:erc20"
+        },
+        "decimals": 6,
+        "min_amount": "10000",
+        "max_amount": "100000000",
+        "chain_icon": "",
+        "chain_id": "604686810448826",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "http://localhost:8545",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "usd-coin",
+          "aggregate": "USDC",
+          "cmc": "3408"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      }
+    ]
+  },
+  {
+    "chain": "base_sepolia",
+    "id": "evm:84532",
+    "icon": "https://garden.imgix.net/chain_images/BaseIcon.svg",
+    "explorer_url": "https://sepolia.basescan.org",
+    "confirmation_target": 1,
+    "source_timelock": "43200",
+    "destination_timelock": "3600",
+    "supported_htlc_schemas": ["evm:htlc_erc20"],
+    "supported_token_schemas": ["evm:erc20"],
+    "assets": [
+      {
+        "id": "base_sepolia:usdt",
+        "name": "Tether USD:USDT",
+        "chain": "base_sepolia",
+        "icon": "https://garden.imgix.net/token-images/usdt.svg",
+        "htlc": {
+          "address": "0x917cfef972d667dC0FeC76806cB5623585B81493",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0xeaE7721d779276eb0f5837e2fE260118724a2Ba4",
+          "schema": "evm:erc20"
+        },
+        "decimals": 6,
+        "min_amount": "10000",
+        "max_amount": "35000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/BaseIcon.svg",
+        "chain_id": "84532",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://sepolia.basescan.org",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "tether",
+          "aggregate": "USDT",
+          "cmc": "825"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "base_sepolia:usdc",
+        "name": "USD Coin:USDC",
+        "chain": "base_sepolia",
+        "icon": "https://garden.imgix.net/token-images/usdc.svg",
+        "htlc": {
+          "address": "0x730Be401ef981D199a0560C87DfdDaFd3EC1C493",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x1ac7A0ebf13a996D5915e212900bE2d074f94988",
+          "schema": "evm:erc20"
+        },
+        "decimals": 6,
+        "min_amount": "10000",
+        "max_amount": "35000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/BaseIcon.svg",
+        "chain_id": "84532",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://sepolia.basescan.org",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "usd-coin",
+          "aggregate": "USDC",
+          "cmc": "3408"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      }
+    ]
+  },
+  {
+    "chain": "arbitrum_sepolia",
+    "id": "evm:421614",
+    "icon": "https://garden.imgix.net/chain_images/arbitrumSepolia.svg",
+    "explorer_url": "https://sepolia.arbiscan.io",
+    "confirmation_target": 1,
+    "source_timelock": "432000",
+    "destination_timelock": "36000",
+    "supported_htlc_schemas": ["evm:htlc_erc20"],
+    "supported_token_schemas": ["evm:erc20"],
+    "assets": [
+      {
+        "id": "arbitrum_sepolia:usdc2",
+        "chain": "arbitrum_sepolia",
+        "name": "USD Coin 2:USDC2",
+        "icon": "https://garden.imgix.net/token-images/usdc.svg",
+        "htlc": {
+          "address": "0x13f0E959F1bbD437065FAD175175e8fa98ee4788",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x1baabb04529d43a73232b713c0fe471f7c7334d5",
+          "schema": "evm:erc20"
+        },
+        "decimals": 6,
+        "min_amount": "10000",
+        "max_amount": "50000000000",
+        "chain_icon": "https://garden-finance.imgix.net/chain_images/arbitrumSepolia.svg",
+        "chain_id": "421614",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://sepolia.arbiscan.io",
+        "min_timelock": 36000,
+        "token_ids": {
+          "coingecko": "usd-coin",
+          "aggregate": "USDC",
+          "cmc": "3408"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "arbitrum_sepolia:usdc",
+        "name": "USD Coin:USDC",
+        "chain": "arbitrum_sepolia",
+        "icon": "https://garden.imgix.net/token-images/usdc.svg",
+        "htlc": {
+          "address": "0x8E12d730756457B99ce6E6AbFd60eBe751dA169B",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0xC90Ad772eCc10a52a681ceDAE6EbBD3470A0c829",
+          "schema": "evm:erc20"
+        },
+        "decimals": 6,
+        "min_amount": "10000",
+        "max_amount": "50000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/arbitrumSepolia.svg",
+        "chain_id": "421614",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://sepolia.arbiscan.io",
+        "min_timelock": 36000,
+        "token_ids": {
+          "coingecko": "usd-coin",
+          "aggregate": "USDC",
+          "cmc": "3408"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      }
+    ]
+  },
+  {
+    "chain": "ethereum_sepolia",
+    "id": "evm:11155111",
+    "icon": "https://garden.imgix.net/chain_images/sepolia.svg",
+    "explorer_url": "https://sepolia.etherscan.io",
+    "confirmation_target": 1,
+    "source_timelock": "7200",
+    "destination_timelock": "600",
+    "supported_htlc_schemas": ["evm:htlc_erc20", "evm:htlc"],
+    "supported_token_schemas": ["evm:erc20"],
+    "assets": [
+      {
+        "id": "ethereum_sepolia:usdc",
+        "name": "USD Coin:USDC",
+        "chain": "ethereum_sepolia",
+        "icon": "https://garden.imgix.net/token-images/usdc.svg",
+        "htlc": {
+          "address": "0x730Be401ef981D199a0560C87DfdDaFd3EC1C493",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0xadDD620EA6D20f4f9c24fff3BC039E497ceBEDc2",
+          "schema": "evm:erc20"
+        },
+        "decimals": 6,
+        "min_amount": "10000",
+        "max_amount": "50000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/sepolia.svg",
+        "chain_id": "11155111",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://sepolia.etherscan.io",
+        "min_timelock": 600,
+        "token_ids": {
+          "coingecko": "usd-coin",
+          "aggregate": "USDC",
+          "cmc": "3408"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      }
+    ]
+  },
+  {
+    "chain": "monad_testnet",
+    "id": "evm:10143",
+    "icon": "https://garden.imgix.net/chain_images/monad.svg",
+    "explorer_url": "https://testnet.monadexplorer.com",
+    "confirmation_target": 1,
+    "source_timelock": "172800",
+    "destination_timelock": "14400",
+    "supported_htlc_schemas": ["evm:htlc_erc20"],
+    "supported_token_schemas": ["evm:erc20"],
+    "assets": [
+      {
+        "id": "monad_testnet:usdc",
+        "name": "USD Coin:USDC",
+        "chain": "monad_testnet",
+        "icon": "https://garden.imgix.net/token-images/usdc.svg",
+        "htlc": {
+          "address": "0x819Ca7042B3E59F613Dc67179B640c5B99a15c5B",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x6c8f9d333964328F7AE2f0ea35389730D88f3d29",
+          "schema": "evm:erc20"
+        },
+        "decimals": 6,
+        "min_amount": "10000",
+        "max_amount": "100000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/monad.svg",
+        "chain_id": "10143",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://testnet.monadexplorer.com",
+        "min_timelock": 14400,
+        "token_ids": {
+          "coingecko": "usd-coin",
+          "aggregate": "USDC",
+          "cmc": "3408"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      }
+    ]
+  },
+  {
+    "chain": "alpen_testnet",
+    "id": "evm:8150",
+    "icon": "https://garden.imgix.net/chain_images/AlpenIcon.svg",
+    "explorer_url": "https://explorer.pectra-testnet.alpenlabs.io",
+    "confirmation_target": 1,
+    "source_timelock": "17280",
+    "destination_timelock": "1440",
+    "supported_htlc_schemas": ["evm:htlc_erc20", "evm:htlc"],
+    "supported_token_schemas": ["evm:erc20"],
+    "assets": [
+      {
+        "id": "alpen_testnet:usdc",
+        "name": "USD Coin:USDC",
+        "chain": "alpen_testnet",
+        "icon": "https://garden.imgix.net/token-images/usdc.svg",
+        "htlc": {
+          "address": "0x7031336949223a512C0435dF75dd8114fa3b7261",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x9753D0481fC7e18797877B4e731B496439c849dE",
+          "schema": "evm:erc20"
+        },
+        "decimals": 6,
+        "min_amount": "10000",
+        "max_amount": "50000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/AlpenIcon.svg",
+        "chain_id": "8150",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://explorer.pectra-testnet.alpenlabs.io",
+        "min_timelock": 1440,
+        "token_ids": {
+          "coingecko": "usd-coin",
+          "aggregate": "USDC",
+          "cmc": "3408"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      }
+    ]
+  },
+  {
+    "chain": "citrea_testnet",
+    "id": "evm:5115",
+    "icon": "https://garden.imgix.net/chain_images/citrea-black.svg",
+    "explorer_url": "https://explorer.testnet.citrea.xyz",
+    "confirmation_target": 1,
+    "source_timelock": "43200",
+    "destination_timelock": "3600",
+    "supported_htlc_schemas": ["evm:htlc", "evm:htlc_erc20"],
+    "supported_token_schemas": ["evm:erc20"],
+    "assets": [
+      {
+        "id": "citrea_testnet:usdc",
+        "name": "USD Coin:USDC",
+        "chain": "citrea_testnet",
+        "icon": "https://garden.imgix.net/token-images/usdc.svg",
+        "htlc": {
+          "address": "0x730Be401ef981D199a0560C87DfdDaFd3EC1C493",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0xCdA8661fDA031deFCc9BdD88C0e12669Cac47Fb0",
+          "schema": "evm:erc20"
+        },
+        "decimals": 6,
+        "min_amount": "10000",
+        "max_amount": "100000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/citrea-black.svg",
+        "chain_id": "5115",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://explorer.testnet.citrea.xyz",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "usd-coin",
+          "aggregate": "USDC",
+          "cmc": "3408"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      },
+      {
+        "id": "citrea_testnet:usdt",
+        "name": "Tether USD:USDT",
+        "chain": "citrea_testnet",
+        "icon": "https://garden.imgix.net/token-images/usdt.svg",
+        "htlc": {
+          "address": "0x917cfef972d667dC0FeC76806cB5623585B81493",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0xF5cFE09b852Ddb164cF6Db419B9c11aAb5F30cb6",
+          "schema": "evm:erc20"
+        },
+        "decimals": 6,
+        "min_amount": "10000",
+        "max_amount": "100000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/citrea-black.svg",
+        "chain_id": "5115",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://explorer.testnet.citrea.xyz",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "tether",
+          "aggregate": "USDT",
+          "cmc": "825"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      }
+    ]
+  },
+  {
+    "chain": "bnbchain_testnet",
+    "name": "BNB Chain Testnet",
+    "id": "evm:97",
+    "icon": "https://garden.imgix.net/chain_images/BNBIcon.svg",
+    "explorer_url": "https://testnet.bscscan.com",
+    "confirmation_target": 1,
+    "source_timelock": "86400",
+    "destination_timelock": "7200",
+    "supported_htlc_schemas": ["evm:htlc_erc20"],
+    "supported_token_schemas": ["evm:erc20"],
+    "assets": [
+      {
+        "id": "bnbchain_testnet:wbtc",
+        "name": "Wrapped Bitcoin:WBTC",
+        "chain": "bnbchain_testnet",
+        "icon": "https://garden.imgix.net/token-images/wbtc.svg",
+        "htlc": {
+          "address": "0xd1E0Ba2b165726b3a6051b765d4564d030FDcf50",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x39f3294352208905fc6ebf033954E6c6455CdB4C",
+          "schema": "evm:erc20"
+        },
+        "decimals": 8,
+        "min_amount": "10",
+        "max_amount": "1000000",
+        "chain_icon": "https://garden-finance.imgix.net/chain_images/bnb-testnet.png",
+        "chain_id": "97",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://testnet.bscscan.com",
+        "min_timelock": 7200,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      }
+    ]
+  },
+  {
+    "chain": "hyperevm_testnet",
+    "name": "HyperEVM Testnet",
+    "id": "evm:998",
+    "icon": "https://garden.imgix.net/chain_images/hyperliquid.svg",
+    "explorer_url": "https://testnet.purrsec.com",
+    "confirmation_target": 1,
+    "source_timelock": "86400",
+    "destination_timelock": "7200",
+    "supported_htlc_schemas": ["evm:htlc_erc20"],
+    "supported_token_schemas": ["evm:erc20"],
+    "assets": [
+      {
+        "id": "hyperevm_testnet:usdc",
+        "name": "USD Coin:USDC",
+        "chain": "hyperevm_testnet",
+        "icon": "https://garden.imgix.net/token-images/usdc.svg",
+        "htlc": {
+          "address": "0xdb6Bd9e3363d456be65bCB5eF806c11DDC9b882B",
+          "schema": "evm:htlc_erc20"
+        },
+        "token": {
+          "address": "0x2b3370ee501b4a559b57d449569354196457d8ab",
+          "schema": "evm:erc20"
+        },
+        "decimals": 6,
+        "min_amount": "10000",
+        "max_amount": "50000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/hyperliquid.svg",
+        "chain_id": "998",
+        "chain_type": "evm",
+        "version": "v3",
+        "explorer_url": "https://testnet.purrsec.com",
+        "min_timelock": 7200,
+        "token_ids": {
+          "coingecko": "usd-coin",
+          "aggregate": "USDC",
+          "cmc": "3408"
+        },
+        "solver": "__SOLVER_EVM_ADDRESS__"
+      }
+    ]
+  },
+  {
+    "chain": "solana_devnet",
+    "id": "solana:103",
+    "icon": "https://garden.imgix.net/chain_images/solana.png",
+    "explorer_url": "https://explorer.solana.com/?cluster=devnet",
+    "confirmation_target": 1,
+    "source_timelock": "216000",
+    "destination_timelock": "3600",
+    "supported_htlc_schemas": ["solana:htlc_native"],
+    "supported_token_schemas": ["primary"],
+    "assets": [
+      {
+        "id": "solana_devnet:sol",
+        "name": "Solana:SOL",
+        "chain": "solana_devnet",
+        "icon": "https://garden.imgix.net/chain_images/solana.png",
+        "htlc": {
+          "address": "primary",
+          "schema": "solana:htlc_native"
+        },
+        "token": {
+          "address": "primary",
+          "schema": "primary"
+        },
+        "decimals": 9,
+        "min_amount": "67000",
+        "max_amount": "100000000000",
+        "chain_icon": "https://garden.imgix.net/chain_images/solana.svg",
+        "chain_id": "103",
+        "chain_type": "solana",
+        "version": "v3",
+        "explorer_url": "https://explorer.solana.com/?cluster=devnet",
+        "min_timelock": 3600,
+        "token_ids": {
+          "coingecko": "solana",
+          "aggregate": "SOL",
+          "cmc": "5426"
+        },
+        "solver": "__SOLANA_SOLVER_ADDRESS__"
+      }
+    ]
+  },
+  {
+    "chain": "bitcoin_testnet",
+    "id": "bitcoin",
+    "icon": "https://garden.imgix.net/token-images/bitcoin.svg",
+    "explorer_url": "https://mempool.space/testnet4/",
+    "confirmation_target": 1,
+    "source_timelock": "144",
+    "destination_timelock": "12",
+    "supported_htlc_schemas": [],
+    "supported_token_schemas": [],
+    "assets": [
+      {
+        "id": "bitcoin_testnet:btc",
+        "name": "Bitcoin:BTC",
+        "chain": "bitcoin_testnet",
+        "icon": "https://garden.imgix.net/token-images/bitcoin.svg",
+        "htlc": {
+          "address": "primary",
+          "schema": "primary"
+        },
+        "token": {
+          "address": "primary",
+          "schema": "primary"
+        },
+        "decimals": 8,
+        "min_amount": "10",
+        "max_amount": "100000000",
+        "chain_icon": "https://garden.imgix.net/token-images/bitcoin.svg",
+        "chain_id": null,
+        "chain_type": "bitcoin",
+        "version": "v3",
+        "explorer_url": "https://mempool.space/testnet4",
+        "min_timelock": 12,
+        "token_ids": {
+          "coingecko": "bitcoin",
+          "aggregate": "BTC",
+          "cmc": "1"
+        },
+        "solver": "f36bd3b36949069a47da5ba0f5c8f8738d29719a9bafefca286aceefe856bcc8"
+      }
+    ]
+  }
+]

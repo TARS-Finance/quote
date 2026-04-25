@@ -1,0 +1,27 @@
+addr = "0.0.0.0:6969"
+db_url = "__DATABASE_URL__"
+chain_json_path = "local/chain.json"
+policy_path = "local/policy.toml"
+
+[chain_ids]
+base_sepolia = "84532"
+arbitrum_sepolia = "421614"
+bitcoin_testnet = "1"
+utars_chain_1 = "515118202807383"
+monad_testnet = "10143"
+alpen_testnet = "8150"
+citrea_testnet = "5115"
+bnbchain_testnet = "97"
+ethereum_sepolia = "11155111"
+hyperevm_testnet = "998"
+solana_devnet = "103"
+
+[pricing]
+refresh_interval_secs = 30
+coingecko_api_url = "https://api.coingecko.com/api/v3/simple/price"
+
+[quote]
+order_deadline_in_minutes = 60
+quote_private_key = "__QUOTE_PRIVATE_KEY__"
+max_user_slippage_bps = 300
+default_eta_seconds = 20

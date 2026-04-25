@@ -4,7 +4,9 @@
 
 chain.json
 Settings.toml
-/local
+/local/*
+!/local/chain.example.json
+!/local/policy.example.toml
 
 /cli/node_modules
 /cli/config.json

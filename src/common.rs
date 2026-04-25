@@ -44,9 +44,10 @@ pub fn sha256_hex(parts: &[impl AsRef<[u8]>]) -> String {
     hex::encode(hasher.finalize())
 }
 
-/// Normalizes addresses so cross-chain comparisons use the same casing rules as Garden.
+/// Normalizes addresses so cross-chain comparisons use the same casing rules as Unipay.
+/// Bitcoin and Solana addresses are case-sensitive and must not be lowercased.
 pub fn normalize_address(chain: &str, address: &str) -> String {
-    if chain.contains("bitcoin") {
+    if chain.contains("bitcoin") || chain.contains("solana") {
         address.to_string()
     } else {
         address.to_lowercase()

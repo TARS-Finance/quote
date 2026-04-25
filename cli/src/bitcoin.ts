@@ -7,7 +7,7 @@ import { schnorr } from "@noble/curves/secp256k1.js";
 import { type HtlcParams } from "./types";
 import { type BitcoinChainConfig } from "./types";
 
-const GARDEN_H_POINT =
+const UNIPAY_H_POINT =
   "0250929b74c1a04954b78b4b6035e97a5e078a5a0f28ec96d547bfee9ace803ac0";
 const DUST_LIMIT_SATS = 330n;
 const TAP_SIGHASH_SINGLE_ANYONECANPAY = 0x83;
@@ -91,9 +91,9 @@ function filterTapLeafScript(
   );
 }
 
-function gardenNumsInternalKey(): Uint8Array {
-  const r = sha256(new TextEncoder().encode("GardenHTLC"));
-  const hPoint = schnorr.Point.fromHex(GARDEN_H_POINT);
+function unipayNumsInternalKey(): Uint8Array {
+  const r = sha256(new TextEncoder().encode("UnipayHTLC"));
+  const hPoint = schnorr.Point.fromHex(UNIPAY_H_POINT);
   const rPoint = schnorr.Point.BASE.multiply(BigInt(`0x${bytesToHex(r)}`));
   return hPoint.add(rPoint).toBytes(true).slice(1);
 }
@@ -148,7 +148,7 @@ function buildPayment(params: HtlcParams) {
   const refund = refundLeaf(params.timelock!, initiatorPubkey);
   const instantRefund = instantRefundLeaf(initiatorPubkey, redeemerPubkey);
   const payment = btc.p2tr(
-    gardenNumsInternalKey(),
+    unipayNumsInternalKey(),
     [{ script: redeem }, [{ script: refund }, { script: instantRefund }]],
     undefined,
     true,
@@ -201,7 +201,7 @@ function buildPaymentInternal(
   const refund = refundLeaf(params.timelock!, initiatorPubkey);
   const instantRefund = instantRefundLeaf(initiatorPubkey, redeemerPubkey);
   const payment = btc.p2tr(
-    gardenNumsInternalKey(),
+    unipayNumsInternalKey(),
     [{ script: redeem }, [{ script: refund }, { script: instantRefund }]],
     network,
     true,

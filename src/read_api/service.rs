@@ -1,7 +1,7 @@
 use std::sync::Arc;
 use tars::orderbook::{OrderbookProvider, primitives::OrderQueryFilters, traits::Orderbook};
 
-/// Thin wrapper around the Garden-compatible orderbook read queries.
+/// Thin wrapper around the Unipay-compatible orderbook read queries.
 #[derive(Clone)]
 pub struct ReadApiService {
     orderbook: Arc<OrderbookProvider>,

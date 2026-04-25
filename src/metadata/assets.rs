@@ -85,7 +85,7 @@ impl MetadataIndex {
 
     /// Normalizes the lookup key used to match strategy assets back to metadata.
     pub fn normalize_htlc_key(asset: &Asset) -> (String, String) {
-        let address = if asset.chain.contains("solana") {
+        let address = if asset.chain.contains("solana") && asset.token.address != "primary" {
             format!("{}_{}", asset.htlc.address, asset.token.address)
         } else {
             asset.htlc.address.clone()

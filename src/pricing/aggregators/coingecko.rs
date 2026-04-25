@@ -5,7 +5,7 @@ use rust_decimal::prelude::FromPrimitive;
 use serde::Deserialize;
 use std::{collections::HashMap, time::Duration};
 
-const COINGECKO_API_KEY_HEADER: &str = "X-CG-API-KEY";
+const COINGECKO_API_KEY_HEADER: &str = "x-cg-demo-api-key";
 const REQUEST_TIMEOUT: Duration = Duration::from_secs(5);
 
 /// Background CoinGecko fetcher that feeds canonical prices into the market-data service.

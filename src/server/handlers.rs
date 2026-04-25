@@ -88,7 +88,7 @@ pub async fn get_order(
     Ok(success(order))
 }
 
-/// Lists orders from the shared orderbook using the existing Garden filters.
+/// Lists orders from the shared orderbook using the existing Unipay filters.
 pub async fn list_orders(
     State(state): State<Arc<AppState>>,
     Query(filters): Query<OrderQueryFilters>,
